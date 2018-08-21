@@ -9,7 +9,7 @@ public class D103{
         int N = sc.nextInt();
         int M = sc.nextInt();
 
-        Pair[] pairs = new Pair[m];
+        Pair[] pairs = new Pair[M];
         for(int i = 0;i < M;i++){
             Pair ps = new Pair();
             ps.from = sc.nextInt();
@@ -17,6 +17,17 @@ public class D103{
             pairs[i] = ps;
         }
         Arrays.sort(pairs);
+        int cnt = 0;
+        int nowclear = 0;
+        for(int i = 0; i<M; i++){
+            int nowfrom = pairs[i].from;
+            int nowend = pairs[i].end;
+            if(nowclear < nowfrom){
+                cnt++;
+                nowclear = nowend - 1;
+            }
+        }
+        System.out.println(cnt);
     }
 }
 
