@@ -1,4 +1,4 @@
-s (22 sloc)  614 Bytes
+
 import java.util.*;
 public class B103{
     public static void main(String[] args) {
